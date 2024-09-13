@@ -9,7 +9,7 @@ html, body {
   .login {
     margin: 0;
     padding: 0;
-    background-image: url('./LoginUtils/THEME_HOTEL_SIGN_FIVE_STARS_FACADE_BUILDING_GettyImages-1320779330-3.jpg');
+    background-image: url('/Login-backgroung/THEME_HOTEL_SIGN_FIVE_STARS_FACADE_BUILDING_GettyImages-1320779330-3.jpg');
     background-size: cover; /* Asegura que la imagen cubra todo el div */
     background-position: center;
     background-repeat: no-repeat; /* Evita que la imagen se repita */
