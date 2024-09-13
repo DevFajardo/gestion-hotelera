@@ -31,12 +31,6 @@ html, body {
     display: flex;
 }
 
-.login-text {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-
   #loginsesion{
     margin-top: 20px;
     margin-bottom: 60px;
