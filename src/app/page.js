@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 "use client";
 import useLoginState from "./LoginUtils/useLoginState.js";
-=======
-'use client'
-import useLoginState from './LoginUtils/useLoginState.js';
->>>>>>> 644749efa443ac742acb28115425150a2f791bb9
+
 
 export default function Home() {
   const { data, handleData, handleSubmit } = useLoginState();
