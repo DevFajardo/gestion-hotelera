@@ -1,0 +1,103 @@
+/* Estilo general de la tarjeta */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0f4c75;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0px;
+  margin: 10px;
+  width: 200px;
+  height: 150px;
+  font-family: Roboto, sans-serif;
+}
+
+/* Encabezado de la tarjeta con el número de habitación y el icono */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* Estilo del número de la habitación */
+.card-number {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #f8f8f8;
+}
+
+/* Icono de cama */
+.card-icon {
+  /*font-size: 18px;*/
+  padding: 0px;
+  margin-right: 20px;
+}
+
+/* Estilo del tipo de habitación */
+.card-room-type {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  background-color: #f8f8f8;
+  width: 100%;
+  padding: 12px;
+  font-weight: 600;
+  align-items: center;
+  color: black;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+/* Estilo de text de la habitacion */
+.card-text {
+  margin-left: 10px;
+  padding: 0px;
+}
+
+/* icono del tipo de habitacion */
+.card-icon-room {
+  padding: 0px;
+  margin-right: 5px;
+}
+
+/* Estado de la habitación y su estilo dinámico */
+.card-status {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #fff;
+  padding: 5px;
+}
+
+/* Indicador visual del estado */
+.status-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: currentColor; /* Hereda el color del estado */
+  margin-left: 8px;
+}
+
+/* estilo del estadop visual en disponible*/
+.status-indicator.disponible {
+  background-color: #33ff00;
+}
+
+.status-indicator.ocupado {
+  background-color: #ff0000;
+}
+
+.status-indicator.limpieza {
+  background-color: #ffbf00;
+}
