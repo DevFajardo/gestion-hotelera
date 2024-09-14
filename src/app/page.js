@@ -1,6 +1,6 @@
 'use client'
 import useLoginState from './LoginUtils/useLoginState.js';
-
+import Navbar from './components/Navbar/Navbar.jsx';
 export default function Home() {
   const { data, handleData, handleSubmit } = useLoginState();
   return (
