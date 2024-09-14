@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+export default function Home() {
+  return <h1>hola</h1>;
+=======
 'use client'
 import useLoginState from './LoginUtils/useLoginState.js';
 
@@ -35,4 +39,5 @@ export default function Home() {
       </div>
     </div>
   );
+>>>>>>> d20369314f4e0097a5315d3a465e012b5b2c92e0
 }
