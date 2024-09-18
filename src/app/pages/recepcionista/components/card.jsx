@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/card.css";
 
-const Card = ({ room }) => {
+const Card = ({ habitacion }) => {
   return (
     <section className="card">
       {/* Encabezado de la tarjeta con el número de la habitación e icono */}
       <div className="card-header">
-        <span className="card-number">Nro: {room.id}</span>
+        <span className="card-number">Nro: {habitacion.id}</span>
         <picture className="card-icon">
           <img
             width="50"
@@ -20,7 +20,7 @@ const Card = ({ room }) => {
 
       {/* Muestra el tipo o nombre de la habitación */}
       <div className="card-room-type">
-        <span className="card-text">{room.name}</span>
+        <span className="card-text">{habitacion.detalle_habitacion}</span>
         <picture className="card-icon-room">
           <img
             width="32"
@@ -33,10 +33,8 @@ const Card = ({ room }) => {
 
       {/* Muestra el estado de la habitación y un indicador visual */}
       <div className="card-status">
-        <span className="status-text">{room.status.toUpperCase()}</span>
-        <span
-          className={`status-indicator ${room.status.toLowerCase()}`}
-        ></span>
+        <span className="status-text">DISPONIBLE </span>
+        <span> 💚</span>
       </div>
     </section>
   );
