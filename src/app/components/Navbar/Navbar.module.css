@@ -1,0 +1,56 @@
+
+.divNavBar { 
+    background-color:#0F4C75;
+    display: flex; 
+    gap: 100px; 
+    width: 100%; 
+    align-items: center; 
+} 
+
+.logo { 
+    height: 70px; 
+    width: 200px; 
+    
+} 
+.reservas, .ocupadas, .disponibles { 
+    background-color: transparent; 
+    width: 11vw; 
+    height: 80px; 
+    color: white; 
+    font-size: large;
+    border: none; 
+    cursor: pointer; 
+    font-weight: 400;
+} 
+.reservas:hover{ 
+    width: 15vw; 
+    transition: 0.4s; 
+    background-color: #BBE1FA; 
+    color: #000;
+} 
+.ocupadas:hover{ 
+    width: 15vw; 
+    transition: 0.4s; 
+    background-color: #BBE1FA; 
+    color: #000;
+} 
+.disponibles:hover{ 
+    width: 15vw; 
+    transition: 0.4s; 
+    background-color: #BBE1FA; 
+    color: #000;
+} 
+.divPerfil{ 
+    text-align:left; 
+    margin-left: auto; 
+    padding-right: 40px; 
+} 
+.divPerfil .nombre { 
+    color: white; 
+    margin-bottom: 5px; 
+}
+.divPerfil .Rol { 
+    color: #BBE1FA; 
+    margin-top: 0; 
+    font-family:monospace; 
+}
