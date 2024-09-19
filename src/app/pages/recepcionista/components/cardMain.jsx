@@ -17,7 +17,7 @@ import Card from "./card";
         filters={filters}
         setFilters={setFilters}
         filterProperty="nombre"
-        general="TODAS LAS CATEGORÍAS"
+        general="CATEGORIAS"
       />
       <Filter
         rooms={habitaciones}
@@ -25,7 +25,7 @@ import Card from "./card";
         filters={filters}
         setFilters={setFilters}
         filterProperty="piso"
-        general="TODOS LOS PISOS"
+        general="PISOS"
       />
       </div>
       {filteredRooms.map((room) => (
