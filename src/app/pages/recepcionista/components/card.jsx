@@ -6,7 +6,7 @@ const Card = ({ habitacion }) => {
     <section className="card">
       {/* Encabezado de la tarjeta con el número de la habitación e icono */}
       <div className="card-header">
-        <span className="card-number">Nro: {habitacion.id}</span>
+        <span className="card-number">Nro: {habitacion.numero}</span>
         <picture className="card-icon">
           <img
             width="50"
