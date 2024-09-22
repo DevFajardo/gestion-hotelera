@@ -1,9 +1,14 @@
-import React from "react";
+import {useState} from "react";
+import HabitacionModal from "./Modal";
 import "../styles/card.css";
 
 const Card = ({ habitacion }) => {
+  const [modalIsOpen, setIsOpen] = useState(false); // Estado para abrir y cerrar el modal
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
   return (
-    <section className="card">
+    <>
+    <section className="card" onClick={openModal} style={{cursor: 'pointer'}}>
       {/* Encabezado de la tarjeta con el número de la habitación e icono */}
       <div className="card-header">
         <span className="card-number">Nro: {habitacion.numero}</span>
@@ -20,7 +25,7 @@ const Card = ({ habitacion }) => {
 
       {/* Muestra el tipo o nombre de la habitación */}
       <div className="card-room-type">
-        <span className="card-text">{habitacion.detalle_habitacion}</span>
+        <span className="card-text">{habitacion.nombre}</span>
         <picture className="card-icon-room">
           <img
             width="32"
@@ -37,6 +42,12 @@ const Card = ({ habitacion }) => {
         <span> 💚</span>
       </div>
     </section>
+     <HabitacionModal 
+     isOpen={modalIsOpen} 
+     onRequestClose={closeModal} 
+     habitacion={habitacion}
+    />
+   </>
   );
 };
 

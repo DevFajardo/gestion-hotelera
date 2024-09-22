@@ -1,0 +1,98 @@
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #0F4C75;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    color: #fff;
+    position: relative;
+
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .modal-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .modal-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .modal-body {
+    background-color: white;
+    padding-right: 15px;
+    padding-left: 25px;
+    color: black;
+    width: 100%;
+    margin: 0 0 20px 0;
+    position: relative; /* O 'absolute', depende de la necesidad */
+    left: -20px; /* Mueve el div 20px a la izquierda */
+  }
+  
+  .modal-body p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: black;
+  }
+  
+  .modal-body p strong {
+    color: #FFD700;
+  }
+  
+  .modal-footer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-footer p {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #fff
+  }
+  
+  .modal-footer button {
+    background-color: #fff;
+    color: #0F4C75;
+    width: 30px;  /* Ancho y alto iguales */
+    height: 30px;
+    font-size: 12px;
+    border: none;
+    border-radius: 50%;  /* Redondear completamente */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Centrar el contenido */
+  }
+  
+  
+  .modal-footer button:hover {
+    background-color: #4682B4;
+  }
+  

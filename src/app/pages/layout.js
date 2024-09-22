@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar/>
         {children}
+        <div id="modal-root"></div>
       </body>
     </html>
   );
