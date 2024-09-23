@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import Modal from "react-modal";
 import '../styles/Modal.css';
 // Para que el modal esté vinculado correctamente a tu root
-Modal.setAppElement("#modal-root");
 
 const HabitacionModal = ({ isOpen, onRequestClose, habitacion }) => {
+  useEffect(() => {
+    Modal.setAppElement("#modal-root");
+  }, []);
+  
   const handleStatus = (estado) => {
     return estado.includes("disponible") ? "Reservar" : "Gestionar";
   };
