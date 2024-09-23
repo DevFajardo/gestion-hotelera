@@ -4,6 +4,7 @@ import { Filter } from "./filter";
 import Card from "./card";
 
   const Cards = ({habitaciones}) => {
+    
   const habitacionesFetch = habitaciones;
   const [filteredRooms, setFilteredRooms] = useState(habitacionesFetch); // Estado de habitaciones filtradas
   const [filters, setFilters] = useState({ nombre: "all", piso: "all"}); // Estado de los filtros

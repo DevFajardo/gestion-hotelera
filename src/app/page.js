@@ -1,5 +1,5 @@
 "use client";
-import useLoginState from "./LoginUtils/useLoginState.js";
+import useLoginState from "@/utils/useLoginState";
 
 export default function Home() {
   const { data, handleData, handleSubmit } = useLoginState();

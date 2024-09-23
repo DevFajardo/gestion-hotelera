@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { loginHandler } from "./peticiones";
+import { useRouter } from "next/navigation";
 
 export default function useLoginState() {
   const [data, setData] = useState({ username: "", password: "", error: null });
+  const router = useRouter();
 
   const handleData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -14,18 +17,14 @@ export default function useLoginState() {
     } else {
       setData({ ...data, error: null });
       const body = {
-        username : data.username,
-        password : data.password
+        username: data.username,
+        password: data.password,
       };
-      const request = await fetch("http://localhost:3000/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      });
-      const response = await request.json();
+      const ruta = "/api/auth/login";
+      const metodo = "POST";
+      const response = await loginHandler(ruta, body, metodo, router);
       console.log(response);
+      
     }
   };
 

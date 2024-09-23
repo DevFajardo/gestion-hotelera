@@ -42,8 +42,8 @@
 } 
 .divPerfil{ 
     text-align:left; 
-    margin-left: auto; 
-    padding-right: 40px; 
+    margin-left: 8%;
+;
 } 
 .divPerfil .nombre { 
     color: white; 
@@ -53,4 +53,9 @@
     color: #BBE1FA; 
     margin-top: 0; 
     font-family:monospace; 
+}
+
+.options{
+    background-color: transparent;
+    color: white;
 }
