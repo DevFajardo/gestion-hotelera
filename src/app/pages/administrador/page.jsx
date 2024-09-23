@@ -1,9 +1,14 @@
+import handler from "@/app/actions/actions";
+import CardContent from "@/app/components/Cards/GlobalCard";
 
+const Habitaciones = await handler();
 export default function administrador() {
-
+  
   return (
     <>
-      <h1>probando administrador</h1>
+      {Habitaciones.map((habitacion) => {
+        return <CardContent habitacion={habitacion} key = {habitacion.id}/>;
+      })}
     </>
   );
 }
