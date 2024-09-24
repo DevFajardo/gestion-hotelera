@@ -1,4 +1,4 @@
-import '../styles/filter.css';
+import './styles/filter.css';
 
 const Filter = ({ rooms, setFilteredRooms, filters, setFilters, filterProperty, general }) => {
   const handleFilterChange = (e) => {

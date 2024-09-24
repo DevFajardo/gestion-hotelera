@@ -1,4 +1,4 @@
-import './card.css'
+import './styles/card.css';
 const CardContent = ({ habitacion, onClick, children }) => {
   return (
     <>

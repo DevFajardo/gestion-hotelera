@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Filter } from "./filter";
+import { Filter } from "@/app/components/Cards/filter";
 import Card from "./card";
 
   const Cards = ({habitaciones}) => {
