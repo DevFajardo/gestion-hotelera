@@ -12,9 +12,17 @@ export default function useLoginState() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!data.username || !data.password) {
-      setData({ ...data, error: "Todos los campos son obligatorios" });
-    } else {
+    
+      if (!data.username && data.password) {
+        setData({ ...data, error: "Ingrese su nombre de usuario" });
+      }
+      else if (!data.password && data.username) {
+        setData({ ...data, error: "Ingrese su contraseña" });
+      }
+      else if(!data.username && !data.password){
+        setData({ ...data, error: "Ingrese su usuario y contraseña" });
+      }
+     else {
       setData({ ...data, error: null });
       const body = {
         username: data.username,
