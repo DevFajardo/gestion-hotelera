@@ -9,7 +9,7 @@ export async function loginHandler(ruta, body, metodo, router) {
     });
     const response = await request.json();
     if (response.status == "ok") {
-      router.push("/pages/recepcionista");
+      router.push("/pages/dashboard");
     }
     return response;
   } catch (error) {
