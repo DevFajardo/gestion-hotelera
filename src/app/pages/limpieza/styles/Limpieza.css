@@ -1,0 +1,11 @@
+.cleanButton {
+    background-color: #0f4c75;
+    color: white;
+    border: white 1px solid;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}

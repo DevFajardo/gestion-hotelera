@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Modal from "react-modal";
 import '../styles/Modal.css';
-// Para que el modal esté vinculado correctamente a tu root
+// Para que el modal esté vinculado correctamente al root
 
 const HabitacionModal = ({ isOpen, onRequestClose, habitacion }) => {
   useEffect(() => {
@@ -13,7 +13,7 @@ const HabitacionModal = ({ isOpen, onRequestClose, habitacion }) => {
   };
 
   const handleAction = () => {
-    if (habitacion.estado.includes("disponible")) {
+    if (habitacion.estado_disponibilidad.includes("disponible")) {
       console.log("Reservar habitación");
     } else {
       console.log("Gestionar habitación");
@@ -37,10 +37,10 @@ const HabitacionModal = ({ isOpen, onRequestClose, habitacion }) => {
           <p><strong>Tipo:</strong> {habitacion.nombre}</p>
           <p><strong>Piso:</strong> {habitacion.piso}</p>
           <p><strong>Detalle:</strong> {habitacion.detalle_habitacion}</p>
-          <p><strong>Estado:</strong> {habitacion.estado}</p>
+          <p><strong>Estado:</strong> {habitacion.estado_disponibilidad}</p>
         </div>
         <div className="modal-footer">
-            <p>{handleStatus(habitacion.estado)}</p>
+            <p>{handleStatus(habitacion.estado_disponibilidad)}</p>
           <button onClick={handleAction}>{'>'}</button>
         </div>
       </Modal>

@@ -1,13 +1,13 @@
 'use client';
 import { useState } from 'react';
 import { Filter } from "@/app/components/Cards/filter";
-import Card from "./card";
+import CardLimpieza from "./CardLimpieza";
 
   const Cards = ({habitaciones}) => {
     
   const habitacionesFetch = habitaciones;
   const [filteredRooms, setFilteredRooms] = useState(habitacionesFetch); // Estado de habitaciones filtradas
-  const [filters, setFilters] = useState({ nombre: "all", piso: "all", estado_disponibilidad: "all"}); // Estado de los filtros
+  const [filters, setFilters] = useState({ nombre: "all", piso: "all", estado_limpieza: "all"}); // Estado de los filtros
 
   return (
     <>
@@ -33,12 +33,12 @@ import Card from "./card";
         setFilteredRooms={setFilteredRooms}
         filters={filters}
         setFilters={setFilters}
-        filterProperty="estado_disponibilidad"
+        filterProperty="estado_limpieza"
         general="ESTADOS"
       />
       </div>
       {filteredRooms.map((room) => (
-        <Card key={room.id} habitacion={room} />
+        <CardLimpieza key={room.id} habitacion={room} />
       ))}
     </>
   );
