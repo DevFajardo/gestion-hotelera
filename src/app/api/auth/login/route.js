@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { sql } from "@/app/api/lib/bd";
 import jwt from "jsonwebtoken";
-import { redirect } from "next/navigation";
 
 export async function POST(req, res) {
   try {
@@ -41,7 +40,7 @@ export async function POST(req, res) {
       return NextResponse.json({
         message: messages.succes.sessionInit,
         status: "ok",
-      });
+      });s
     }
   } catch (error) {
     return NextResponse.json({ message: messages.error.credentialsError });
