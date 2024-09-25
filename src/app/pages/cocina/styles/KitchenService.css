@@ -1,0 +1,88 @@
+/* Estilos del contenedor principal */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+  
+  /* Encabezado */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .header p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  /* Tabla */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #3282B8;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .table td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table input[type="checkbox"] {
+    transform: scale(1.2);
+  }
+  
+  /* Fila de total */
+  .total-row td {
+    font-weight: bold;
+  }
+  
+  /* Botón de imprimir */
+  .footer {
+    text-align: right;
+  }
+  
+  .print-button {
+    background-color: #004080;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .print-button:hover {
+    background-color: #003366;
+  }
+  
+  .theader{
+    color: white;
+    font-weight: bold;
+  }
