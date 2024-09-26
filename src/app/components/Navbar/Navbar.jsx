@@ -11,14 +11,22 @@ export default function Navbar() {
         src="/Logo/HOTELELGIRASOL.jpg"
         alt="Logo Hotel"
       />
-      <button className={style.reservas}>RESERVAS</button>
-      <button className={style.ocupadas}>OCUPADAS</button>
-      <button className={style.disponibles}>DISPONIBLES</button>
-      <div className={style.divPerfil}>
+            <select id="filtro" className={style.filtro}>
+            <option value="" disabled selected>Opciones</option>
+                <option value="reservas">Habitaciones</option>
+                <option value="ocupadas">Trabajadores</option>
+                <option value="disponibles">Cocina</option>
+                <option value="disponibles">Limpieza</option>
+                <option value="disponibles">Reservas</option>
+            </select>
+            <div className={style.divPerfilContainer}>
+            <div className={style.divPerfil}>
         <p className={style.nombre}>{nombre}</p>
         <p className={style.Rol}>{rol}</p>
       </div>
-      <Button />
+      <Button className={style.button}></Button>
+            </div>
+      
     </div>
   );
 }
