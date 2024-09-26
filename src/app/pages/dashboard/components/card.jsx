@@ -13,7 +13,7 @@ const Card = ({ habitacion }) => {
       <CardContent habitacion={habitacion} onClick={openModal} >
       {/* Muestra el estado de la habitación y un indicador visual */}
       <div className="card-status">
-        <span className="status-text">DISPONIBLE</span>
+        <span className="status-text">{habitacion.estado_disponibilidad.toUpperCase()}</span>
         <span> 💚</span>
       </div>
       </CardContent>
