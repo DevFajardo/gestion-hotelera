@@ -10,5 +10,6 @@ export const messages = {
   succes: {
     sessionInit: "sesion iniciada con exito",
     logoutSucces: "session cerrada con exito",
+    getSucces: "peticion get exitosa"
   },
 };

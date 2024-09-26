@@ -32,3 +32,9 @@ export async function logoutHandler(router) {
     throw new Error("Error al cerrar la sesion");
   }
 }
+
+export async function habitacionesGet() {
+  const peticion = await fetch("http://localhost:3000/api/habitaciones");
+  const habitaciones = await peticion.json();
+  return habitaciones;
+}

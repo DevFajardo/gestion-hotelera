@@ -1,9 +1,9 @@
+import { habitacionesGet } from "@/utils/peticiones";
 import Cards from "./components/cardMain";
-import handler from "@/app/actions/actions";
 
 export default async function Recepcionista() {
   //llamamos la funcion handler importada de actions para traer a este componente la lista de las habitaciones
-  const habitaciones = await handler();
+  const habitaciones = await habitacionesGet();
   return (
     <>
     <Cards habitaciones={habitaciones} />
