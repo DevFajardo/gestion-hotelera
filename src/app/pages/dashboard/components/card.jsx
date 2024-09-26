@@ -10,12 +10,16 @@ const Card = ({ habitacion }) => {
   return (
     <>
       {/* CardContent recibe children adicionales */}
-      <CardContent habitacion={habitacion} onClick={openModal} >
-      {/* Muestra el estado de la habitación y un indicador visual */}
-      <div className="card-status">
-        <span className="status-text">{habitacion.estado_disponibilidad.toUpperCase()}</span>
-        <span> 💚</span>
-      </div>
+      <CardContent habitacion={habitacion} onClick={openModal}>
+        {/* Muestra el estado de la habitación y un indicador visual */}
+        <div className="card-status">
+          <span className="status-text">
+            {habitacion.estado_disponibilidad.toUpperCase()}
+          </span>
+          <span
+            className={`status-indicator ${habitacion.estado_disponibilidad}`}
+          ></span>
+        </div>
       </CardContent>
 
       {/* El modal */}
@@ -24,7 +28,6 @@ const Card = ({ habitacion }) => {
         onRequestClose={closeModal}
         habitacion={habitacion}
       />
-      
     </>
   );
 };
