@@ -2,7 +2,7 @@
 .divNavBar { 
     background-color:#0F4C75;
     display: flex; 
-    gap: 100px; 
+    gap: 200px; 
     width: 100%; 
     align-items: center; 
 } 
@@ -12,38 +12,25 @@
     width: 200px; 
     
 } 
-.reservas, .ocupadas, .disponibles { 
-    background-color: transparent; 
-    width: 11vw; 
-    height: 80px; 
-    color: white; 
-    font-size: large;
-    border: none; 
-    cursor: pointer; 
-    font-weight: 400;
-} 
-.reservas:hover{ 
-    width: 15vw; 
-    transition: 0.4s; 
-    background-color: #BBE1FA; 
-    color: #000;
-} 
-.ocupadas:hover{ 
-    width: 15vw; 
-    transition: 0.4s; 
-    background-color: #BBE1FA; 
-    color: #000;
-} 
-.disponibles:hover{ 
-    width: 15vw; 
-    transition: 0.4s; 
-    background-color: #BBE1FA; 
-    color: #000;
-} 
+
+.filtro{
+    background-color:#0F4C75;
+    color: aliceblue;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    width: 280px;
+}
+.divPerfilContainer {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 5px; 
+}
+
 .divPerfil{ 
     text-align:left; 
-    margin-left: 8%;
-;
 } 
 .divPerfil .nombre { 
     color: white; 
@@ -54,8 +41,9 @@
     margin-top: 0; 
     font-family:monospace; 
 }
-
-.options{
-    background-color: transparent;
-    color: white;
+.button{
+    padding: 10px 15px;
+    border: none; 
+    border-radius: 30px;
+    cursor: pointer;
 }
