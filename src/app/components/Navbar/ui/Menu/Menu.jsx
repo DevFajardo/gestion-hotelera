@@ -22,16 +22,16 @@ export default function Menu() {
             <Link className="link" href={"/pages/dashboard"}>
               Habitaciones
             </Link>
-            <Link className="link" href={"/pages/dashboard"}>
+            <Link className="link" href={"/pages/empleados"}>
               Trabajadores
             </Link>
-            <Link className="link" href={"/pages/dashboard"}>
+            <Link className="link" href={"/pages/cocina"}>
               cocina
             </Link>
-            <Link className="link" href={"/pages/dashboard"}>
+            <Link className="link" href={"/pages/limpieza"}>
               limpieza
             </Link>
-            <Link className="link" href={"/pages/dashboard"}>
+            <Link className="link" href={"/pages/reserva"}>
               reservas
             </Link>
             <hr />
