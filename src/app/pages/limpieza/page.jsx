@@ -1,8 +1,7 @@
 import Cards from "./components/cardMain";
-import handler from "@/app/actions/actions";
+import { habitacionesGet } from "@/utils/peticiones";
 export default async function Limpieza() {
-
-    const habitaciones = await handler();
+    const habitaciones = await habitacionesGet();
     return(
         <>
         <Cards habitaciones={habitaciones}/>

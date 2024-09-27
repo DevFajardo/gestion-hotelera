@@ -1,6 +1,6 @@
 'use client';
 import {useState} from 'react';
-import '../styles/KitchenService.css'; // Importa el archivo CSS
+import '../styles/KitchenServiceTable.css'; // Importa el archivo CSS
 
 const KitchenService = ({ reserva_habitacion }) => {
     const [reserva, setReserva] = useState(reserva_habitacion);
@@ -27,9 +27,9 @@ const KitchenService = ({ reserva_habitacion }) => {
 
     return (
         <div className="container">
-
+            <div className='table-container'>
             <table className="table">
-                <thead className='theader'>
+                <thead>
                     <tr>
                         <th>HABITACION</th>
                         <th>PISO</th>
@@ -63,6 +63,7 @@ const KitchenService = ({ reserva_habitacion }) => {
                 <button className="print-button" onClick={() => window.print()}>
                     IMPRIMIR
                 </button>
+            </div>
             </div>
         </div>
     );
