@@ -9,7 +9,6 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
         apellido: '',
         rol: '',
         telefono: '',
-        correo: '',
         tipo_identificacion: '',
         identificacion: '',
         usuario: '',
@@ -33,7 +32,6 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
                     apellido: '',
                     rol: '',
                     telefono: '',
-                    correo: '',
                     tipo_identificacion: '',
                     identificacion: '',
                     usuario: '',
@@ -47,7 +45,6 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
                 apellido: '',
                 rol: '',
                 telefono: '',
-                correo: '',
                 tipo_identificacion: '',
                 identificacion: '',
                 usuario: '',
@@ -96,10 +93,6 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
                 <div className="input-container">
                     <label htmlFor="telefono">Teléfono</label>
                     <input className='inputs' type="text" id="telefono" name="telefono" value={nuevoEmpleado.telefono} onChange={handleChange} required />
-                </div>
-                <div className="input-container">
-                    <label htmlFor="correo">Correo</label>
-                    <input className='inputs' type="email" id="correo" name="correo" value={nuevoEmpleado.correo} onChange={handleChange} required />
                 </div>
                 <div className="input-container">
                     <label htmlFor="tipo_documento">Tipo de Identificación</label>

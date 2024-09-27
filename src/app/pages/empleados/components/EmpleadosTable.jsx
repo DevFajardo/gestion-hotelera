@@ -42,7 +42,6 @@ export default function EmpleadosTable({ Empleados }) {
                         <th>NOMBRE</th>
                         <th>ROL</th>
                         <th>TELEFONO</th>
-                        <th>CORREO</th>
                         <th>USUARIO</th>
                         <th>CONTRASEÑA</th>
                         <th>ESTADO</th>
@@ -56,10 +55,9 @@ export default function EmpleadosTable({ Empleados }) {
                             <td>{`${empleado.nombre} ${empleado.apellido}`}</td>
                             <td>{empleado.rol}</td>
                             <td>{empleado.telefono}</td>
-                            <td>{empleado.correo}</td>
                             <td>{empleado.usuario}</td>
                             <td>{empleado.contraseña}</td>
-                            <td>{empleado.estado}</td>
+                            <td>{empleado.estado == "true" ? "inactivo" : "activo"}</td>
                             <td><div onClick={(e) => { e.stopPropagation(); handleEliminarEmpleado(empleado.identificacion) }} className="trash-icon"></div></td>
                         </tr>
                     ))}
