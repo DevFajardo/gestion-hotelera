@@ -30,6 +30,7 @@ th {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
+    height: 30px;
 }
 
 td:last-child {

@@ -53,7 +53,7 @@ const KitchenService = ({ reserva_habitacion }) => {
                     <tr className="total-row">
                         <td>TOTAL</td>
                         <td></td>
-                        <td>{reserva.reduce((acc, room) => acc + (room.estado? room.cantidad: 0), 0)}</td>
+                        <td>{reserva.reduce((acc, room) => acc + room.cantidad, 0)}</td>
                         <td></td>
                     </tr>
                 </tbody>
