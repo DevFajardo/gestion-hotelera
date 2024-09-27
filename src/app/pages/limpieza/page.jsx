@@ -1,11 +1,12 @@
 import Cards from "./components/cardMain";
-import { habitacionesGet } from "@/utils/peticiones";
+import { peticionGet } from "@/utils/peticiones";
 export default async function Limpieza() {
-    const habitaciones = await habitacionesGet();
-    return(
-        <>
-        <Cards habitaciones={habitaciones}/>
-        </>
-    )
-
+  const habitaciones = await peticionGet(
+    "http://localhost:3000/api/habitaciones"
+  );
+  return (
+    <>
+      <Cards habitaciones={habitaciones} />
+    </>
+  );
 }
