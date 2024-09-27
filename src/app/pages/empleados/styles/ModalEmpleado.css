@@ -1,0 +1,171 @@
+/* Estilos generales del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0F4C75;
+  padding: 30px;
+  width: 90%; /* Cambia a porcentaje para pantallas pequeñas */
+  max-width: 400px; /* Limita el ancho máximo */
+  max-height: 500px; /* Limitar la altura del modal */
+  overflow-y: auto; /* Agregar scroll si el contenido excede la altura */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+/* Estilos del formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px 0;
+}
+
+label {
+  flex: 1;
+  margin-right: 10px;
+  color: white;
+}
+
+.inputs {
+  flex: 2;
+  width: 100%;
+  max-width: 250px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+form select {
+  width: 100%;
+  max-width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Botones */
+form button[type="submit"],
+form button[type="button"] {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: white;
+}
+
+form button[type="submit"] {
+  background-color: #3F88C5;
+}
+
+form button[type="submit"]:hover {
+  background-color: #2C6BA1;
+}
+
+form button[type="button"] {
+  background-color: #D9534F;
+  margin-right: 10px;
+}
+
+form button[type="button"]:hover {
+  background-color: #C9302C;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.buttons-container button {
+  min-width: 100px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+/* Media Queries para hacer responsive el modal */
+
+/* Para pantallas medianas (tablets y pantallas medianas) */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 80%; /* Hacer el modal más ancho en pantallas medianas */
+    padding: 20px; /* Reducir padding */
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  .inputs {
+    font-size: 13px;
+  }
+
+  .buttons-container button {
+    min-width: 90px;
+    height: 35px;
+    padding: 8px 15px;
+  }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 90%; /* Ocupa casi todo el ancho de la pantalla */
+    height: 100%; /* Ocupa casi toda la altura de la pantalla */
+    padding: 15px;
+  }
+
+  .input-container {
+    flex-direction: column; /* Apilar label e input uno debajo del otro */
+    align-items: flex-start;
+  }
+
+  label {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .inputs,
+  form select {
+    max-width: 100%; /* Ocupa el 100% en pantallas pequeñas */
+    font-size: 12px;
+  }
+
+  .buttons-container {
+    justify-content: center; /* Centrar botones en pantallas pequeñas */
+    flex-direction: column; /* Apilar botones verticalmente */
+  }
+
+  .buttons-container button {
+    width: 100%; /* Botones ocupan todo el ancho disponible */
+    margin: 5px 0;
+    min-width: unset; /* Desactivar ancho mínimo */
+  }
+}
