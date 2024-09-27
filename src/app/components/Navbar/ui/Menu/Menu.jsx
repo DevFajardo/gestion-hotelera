@@ -2,6 +2,7 @@
 import { useState } from "react";
 import style from "./Menu.module.css";
 import Button from "../ButtonSalir/Button";
+import Link from "next/link";
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -18,14 +19,24 @@ export default function Menu() {
       {isOpen && (
         <div className={style.dropdownMenu}>
           <ul>
-            <li>Habitaciones</li>
-            <li>Trabajadores</li>
-            <li>Cocina</li>
-            <li>Limpieza</li>
-            <li>Reservas</li>
+            <Link className="link" href={"/pages/dashboard"}>
+              Habitaciones
+            </Link>
+            <Link className="link" href={"/pages/dashboard"}>
+              Trabajadores
+            </Link>
+            <Link className="link" href={"/pages/dashboard"}>
+              cocina
+            </Link>
+            <Link className="link" href={"/pages/dashboard"}>
+              limpieza
+            </Link>
+            <Link className="link" href={"/pages/dashboard"}>
+              reservas
+            </Link>
             <hr />
             <div className={style.centeredButton}>
-              <Button></Button>
+              <Button />
             </div>
           </ul>
         </div>
