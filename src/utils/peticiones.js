@@ -33,8 +33,8 @@ export async function logoutHandler(router) {
   }
 }
 
-export async function habitacionesGet() {
-  const peticion = await fetch("http://localhost:3000/api/habitaciones");
-  const habitaciones = await peticion.json();
-  return habitaciones;
+export async function peticionGet(url) {
+  const peticion = await fetch(url);
+  const data = await peticion.json();
+  return data;
 }
