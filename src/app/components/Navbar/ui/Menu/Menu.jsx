@@ -19,21 +19,32 @@ export default function Menu() {
       {isOpen && (
         <div className={style.dropdownMenu}>
           <ul>
-            <Link className="link" href={"/pages/dashboard"}>
+            <li>
+            <Link className={style.Link} href={"/pages/dashboard"}>
               Habitaciones
             </Link>
-            <Link className="link" href={"/pages/dashboard"}>
+            </li>
+            <li>
+            <Link className={style.Link} href={"/pages/empleados"}>
               Trabajadores
             </Link>
-            <Link className="link" href={"/pages/dashboard"}>
+            </li>
+            <li>
+            <Link className={style.Link} href={"/pages/cocina"}>
               cocina
             </Link>
-            <Link className="link" href={"/pages/dashboard"}>
+            </li>
+            <li>
+            <Link className={style.Link} href={"/pages/limpieza"}>
               limpieza
             </Link>
-            <Link className="link" href={"/pages/dashboard"}>
+            </li>
+            <li>
+            <Link className={style.Link} href={"/pages/"}>
               reservas
             </Link>
+            </li>
+            
             <hr />
             <div className={style.centeredButton}>
               <Button />
