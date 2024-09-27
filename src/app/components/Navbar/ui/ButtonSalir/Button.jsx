@@ -11,8 +11,7 @@ export default function Button() {
         logoutHandler(router);
       }}
       className={style.options}
-    >
-      v
+    >Log out
     </button>
   );
 }
