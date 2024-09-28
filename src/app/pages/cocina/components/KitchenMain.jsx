@@ -10,20 +10,6 @@ const KitchenService = ({ reserva_habitacion }) => {
         setReserva(updatedRooms);
     };
 
-    const columns = Object.keys(reserva[0]).map((key) => ({
-        header: key.toUpperCase(),
-        accessor: key,
-      }));
-
-      const renderActions = (room, index) => (
-        key === 'estado' ? (
-          <input
-            type="checkbox"
-            checked={room.estado}
-            onChange={() => handleCheckboxChange(index)}
-          />
-        ) : null // Otros campos no tienen acciones
-      );
 
     return (
         <div className="container">
