@@ -29,7 +29,6 @@ export default function EmpleadosTable({ Empleados }) {
     };
 
     const handleEliminarEmpleado = (identificacion) => {
-        setEmpleados((prevEmpleados) => prevEmpleados.filter((empleado) => empleado.identificacion !== identificacion));
     };
 
     return (

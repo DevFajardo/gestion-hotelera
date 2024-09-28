@@ -95,10 +95,10 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
                     <input className='inputs' type="text" id="telefono" name="telefono" value={nuevoEmpleado.telefono} onChange={handleChange} required />
                 </div>
                 <div className="input-container">
-                    <label htmlFor="tipo_documento">Tipo de Identificación</label>
+                    <label htmlFor="tipo_identificacion">Tipo de Identificación</label>
                     <select
-                        id="tipo_documento"
-                        name="tipo_documento"
+                        id="tipo_identificacion"
+                        name="tipo_identificacion"
                         value={nuevoEmpleado.tipo_identificacion}
                         onChange={handleChange}
                         required
