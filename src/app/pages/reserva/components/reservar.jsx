@@ -1,4 +1,4 @@
-import style from "../styles/reservar.css";
+import "../styles/reserva.css";
 
 
 export default function reserva(){
@@ -6,7 +6,7 @@ export default function reserva(){
         <div className="divReserva">
             <div className="container">
                 <div className="title">
-                <h1>datos Personales</h1>
+                <h1>Datos Personales</h1>
                 </div>
                 <form className="formularioDP">
                     <div>
