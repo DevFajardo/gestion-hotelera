@@ -54,3 +54,7 @@ export async function peticionDelete(url, body) {
     throw new Error(error);
   }
 }
+
+export async function getEmpleados(setEmpleados) {
+  setEmpleados(await peticionGet("http://localhost:3000/api/empleados"));
+}
