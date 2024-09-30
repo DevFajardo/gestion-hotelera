@@ -38,3 +38,19 @@ export async function peticionGet(url) {
   const data = await peticion.json();
   return data;
 }
+
+export async function peticionDelete(url, body) {
+  try {
+    const peticion = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    const response = await peticion.json();
+    return response;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
