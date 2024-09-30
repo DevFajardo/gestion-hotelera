@@ -2,9 +2,9 @@ import useContextEmpleado from "./ContextEmpleados";
 import { useEffect } from "react";
 import EmpleadoModal from "./Modal";
 import "../styles/EmpleadosTable.css";
-import { peticionDelete } from "@/utils/peticiones";
+import { getEmpleados, peticionDelete } from "@/utils/peticiones";
 
-export default function EmpleadosTable({ Empleados }) {
+export default function EmpleadosTable() {
   const {
     empleados,
     setEmpleados,
@@ -17,11 +17,11 @@ export default function EmpleadosTable({ Empleados }) {
   } = useContextEmpleado();
 
   useEffect(() => {
-    setEmpleados(Empleados);
-  }, [setEmpleados, Empleados]);
+    getEmpleados(setEmpleados);
+  }, []);
 
   const handleAgregarEmpleado = (nuevoEmpleado) => {
-    console.log(nuevoEmpleado)
+    console.log(nuevoEmpleado);
   };
 
   const handleOpenModal = (empleado) => {
@@ -33,6 +33,9 @@ export default function EmpleadosTable({ Empleados }) {
   const handleEliminarEmpleado = async (identificacion) => {
     const body = { identificacion: identificacion };
     const response = await peticionDelete("/api/empleados", body);
+    setEmpleados(
+      empleados.filter((empleado) => empleado.identificacion !== identificacion)
+    );
     console.log(response);
   };
 
