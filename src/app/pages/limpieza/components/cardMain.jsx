@@ -37,9 +37,11 @@ import CardLimpieza from "./CardLimpieza";
         general="ESTADOS"
       />
       </div>
+      <div className='grid-wrapper'>
       {filteredRooms.map((room) => (
         <CardLimpieza key={room.id} habitacion={room} />
       ))}
+      </div>
     </>
   );
 };
