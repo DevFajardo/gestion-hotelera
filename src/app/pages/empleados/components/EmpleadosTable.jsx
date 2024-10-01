@@ -22,6 +22,7 @@ export default function EmpleadosTable() {
 
   const handleAgregarEmpleado = (nuevoEmpleado) => {
     console.log(nuevoEmpleado);
+    //funciona
   };
 
   const handleOpenModal = (empleado) => {
