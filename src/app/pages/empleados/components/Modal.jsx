@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import '../styles/ModalEmpleado.css';
-import { actionAsyncStorage } from "next/dist/client/components/action-async-storage-instance";
 
 const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
     // Estado para manejar el nuevo empleado
