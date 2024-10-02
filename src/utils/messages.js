@@ -7,13 +7,15 @@ export const messages = {
     notFoundToken: "no existe el token",
     notFoundCookie: "no existe la cookie",
     notFoundCredentials: "no se econtro el registro",
-    duplicateCredentials: "El registro ya esta creado"
+    duplicateIdentification: "ya hay un registro con esa identificacion",
   },
   succes: {
     sessionInit: "sesion iniciada con exito",
     logoutSucces: "session cerrada con exito",
     getSucces: "peticion get exitosa",
     deleteSucces : "registro eliminado correctamente",
-    createSucces : "registro creado exitosamente"
+    createSucces : "registro creado exitosamente",
+    updateSucces : "registro actualizado exitosamente",
+
   },
 };

@@ -57,7 +57,40 @@ export async function POST(req) {
         return NextResponse.json({ message: messages.succes.createSucces });
       } else {
         return NextResponse.json({
-          message: messages.error.duplicateCredentials,
+          message: messages.error.duplicateIdentification,
+        });
+      }
+    }
+  } catch (error) {
+    return NextResponse.json({ message: messages.error.defaultError });
+  }
+}
+
+export async function PUT(req) {
+  try {
+    const body = await req.json();
+    if (body) {
+      const {
+        tipo_identificacion,
+        n_identificacion,
+        nombre,
+        apellido,
+        telefono,
+        direccion,
+        usuario,
+        contraseña,
+        id_rol,
+        estado,
+      } = body;
+      const review =
+        await sql`SELECT n_identificacion from empleado where n_identificacion = ${n_identificacion}`;
+      if (review[0] != null) {
+        const update =
+          await sql`UPDATE "public"."empleado" SET "tipo_identificacion" = ${tipo_identificacion}, "nombre" = ${nombre}, "apellido" = ${apellido}, "telefono" = ${telefono}, "direccion" = ${direccion}, "usuario" = ${usuario}, "contraseña" = ${contraseña}, "id_rol" = ${id_rol}, "estado" = ${estado} WHERE "n_identificacion" = ${n_identificacion}`;
+        return NextResponse.json({ message: messages.succes.updateSucces });
+      } else {
+        return NextResponse.json({
+          message: messages.error.notFoundCredentials,
         });
       }
     }

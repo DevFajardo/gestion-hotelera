@@ -1,9 +1,12 @@
 import useContextEmpleado from "./ContextEmpleados";
-import { useEffect } from "react";
-import EmpleadoModal from "./Modal";
 import "../styles/EmpleadosTable.css";
-import { getEmpleados, peticionDelete } from "@/utils/peticiones";
-
+import EmpleadoModal from "./Modal";
+import { useEffect } from "react";
+import {
+  getEmpleados,
+  peticionCreateOrUpdate,
+  peticionDelete,
+} from "@/utils/peticiones";
 export default function EmpleadosTable() {
   const {
     empleados,
@@ -20,11 +23,77 @@ export default function EmpleadosTable() {
     getEmpleados(setEmpleados);
   }, []);
 
-  const handleAgregarEmpleado = (nuevoEmpleado) => {
-    console.log(nuevoEmpleado);
-    //funciona
-  };
+  const handleAgregarEmpleado = async (nuevoEmpleado) => {
+    const {
+      action,
+      tipo_identificacion,
+      identificacion,
+      nombre,
+      apellido,
+      telefono,
+      direccion,
+      usuario,
+      contraseña,
+      rol,
+      estado,
+    } = nuevoEmpleado;
 
+    const body = {
+      action: action,
+      created_at: "NOW()",
+      tipo_identificacion: tipo_identificacion,
+      n_identificacion: identificacion,
+      nombre: nombre,
+      apellido: apellido,
+      telefono: telefono,
+      direccion: direccion,
+      usuario: usuario,
+      contraseña: contraseña,
+      id_rol: rol,
+      estado: estado,
+    };
+    console.log(body);
+    if (action == "Crear") {
+      try {
+        if (rol == 1) {
+          nuevoEmpleado.rol = "administrador";
+        } else if (rol == 2) {
+          nuevoEmpleado.rol = "cocinero";
+        } else if (rol == 3) {
+          nuevoEmpleado.rol = "limpieza";
+        } else if (rol == 4) {
+          nuevoEmpleado.rol = "recepcionista";
+        }
+        const response = await peticionCreateOrUpdate("/api/empleados", body);
+        setEmpleados([...empleados, nuevoEmpleado]);
+        console.log(response);
+      } catch (error) {
+        throw new Error(error);
+      }
+    } else {
+      try {
+        if (rol == 1) {
+          nuevoEmpleado.rol = "administrador";
+        } else if (rol == 2) {
+          nuevoEmpleado.rol = "cocinero";
+        } else if (rol == 3) {
+          nuevoEmpleado.rol = "limpieza";
+        } else if (rol == 4) {
+          nuevoEmpleado.rol = "recepcionista";
+        }
+
+        const response = await peticionCreateOrUpdate("/api/empleados", body);
+        const index = empleados.findIndex(
+          (empleado) => empleado.identificacion == identificacion
+        );
+        empleados[index] = nuevoEmpleado;
+        setEmpleados([...empleados]);
+        console.log(response);
+      } catch (error) {
+        throw new Error(error);
+      }
+    }
+  };
   const handleOpenModal = (empleado) => {
     setEmpleadoSeleccionado(empleado);
     setEdicion(true);
