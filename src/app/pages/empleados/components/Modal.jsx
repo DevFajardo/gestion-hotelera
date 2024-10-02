@@ -7,7 +7,6 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
     const [nuevoEmpleado, setNuevoEmpleado] = useState({
         nombre: '',
         apellido: '',
-        direccion: '',
         rol: '',
         telefono: '',
         tipo_identificacion: '',
@@ -15,8 +14,7 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
         usuario: '',
         contraseña: '',
         created_at: '',
-        estado: true,
-        action: ''
+        estado: true
     });
 
     useEffect(() => {
@@ -34,7 +32,6 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
                 setNuevoEmpleado({
                     nombre: '',
                     apellido: '',
-                    direcciones: '',
                     rol: '',
                     telefono: '',
                     tipo_identificacion: '',
@@ -42,8 +39,7 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
                     usuario: '',
                     contraseña: '',
                     created_at: '',
-                    estado: true,
-                    action: ''
+                    estado: true
                 });
             }
         } else {
@@ -51,7 +47,6 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
             setNuevoEmpleado({
                 nombre: '',
                 apellido: '',
-                direccion: '',
                 rol: '',
                 telefono: '',
                 tipo_identificacion: '',
@@ -59,8 +54,7 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
                 usuario: '',
                 contraseña: '',
                 created_at: '',
-                estado: true,
-                action: ''
+                estado: true
             });
         }
     }, [isOpen, empleado]);
@@ -76,8 +70,8 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
         e.preventDefault();
         // Solo añade created_at si el empleado es nuevo (no existe un empleado seleccionado)
         const empleadoConFecha = empleado 
-        ? { ...nuevoEmpleado, action: 'Actualizar' } // Si estás editando, solo pasas los datos del empleado
-        : { ...nuevoEmpleado, created_at: 'NOW()', action: 'Crear' }; // Si estás agregando, añade la fecha
+        ? { ...nuevoEmpleado } // Si estás editando, solo pasas los datos del empleado
+        : { ...nuevoEmpleado, created_at: 'NOW()' }; // Si estás agregando, añade la fecha
         onAgregarEmpleado(empleadoConFecha); // Llama a la función para agregar o actualizar el empleado
         setIsOpen(false); // Cierra el modal después de agregar o actualizar
     };
@@ -105,10 +99,6 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
                 <div className="input-container">
                     <label htmlFor="rol">Rol</label>
                     <input className='inputs' type="text" id="rol" name="rol" value={nuevoEmpleado.rol} onChange={handleChange} required />
-                </div>
-                <div className="input-container">
-                    <label htmlFor="direccion">Dirección</label>
-                    <input className='inputs' type="text" id="direccion" name="direccion" value={nuevoEmpleado.direccion} onChange={handleChange} required />
                 </div>
                 <div className="input-container">
                     <label htmlFor="telefono">Teléfono</label>
