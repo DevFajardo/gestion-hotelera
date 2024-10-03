@@ -103,8 +103,20 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
                     <input className='inputs' type="text" id="apellido" name="apellido" value={nuevoEmpleado.apellido} onChange={handleChange} required />
                 </div>
                 <div className="input-container">
-                    <label htmlFor="rol">Rol</label>
-                    <input className='inputs' type="text" id="rol" name="rol" value={nuevoEmpleado.rol} onChange={handleChange} required />
+                    <label htmlFor="rol">Rol de usuario</label>
+                    <select
+                        id="rol"
+                        name="rol"
+                        value={nuevoEmpleado.rol}
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="">Selecciona un rol</option>
+                        <option value="administrador">Administrador</option>
+                        <option value="recepcionista">Recepcionista</option>
+                        <option value="limpieza">Limpieza</option>
+                        <option value="cocinero">Cocinero</option>
+                    </select>
                 </div>
                 <div className="input-container">
                     <label htmlFor="direccion">Dirección</label>
