@@ -21,7 +21,7 @@ export default function EmpleadosTable() {
 
   useEffect(() => {
     getEmpleados(setEmpleados);
-  }, []);
+  }, [setEmpleados]);
 
   const handleAgregarEmpleado = async (nuevoEmpleado) => {
     const {

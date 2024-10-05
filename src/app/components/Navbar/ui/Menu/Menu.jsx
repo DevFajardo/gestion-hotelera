@@ -40,7 +40,7 @@ export default function Menu() {
             </Link>
             </li>
             <li>
-            <Link className={style.Link} href={"/pages/reserva"}>
+            <Link className={style.Link} href={"/pages/reserva/reservas"}>
               reservas
             </Link>
             </li>
