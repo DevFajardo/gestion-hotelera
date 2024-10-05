@@ -1,12 +1,27 @@
-import {useState} from 'react';
+import { useState } from 'react';
 export default function useReserva() {
     const [reservas, setReservas] = useState([]);
-    const [reservaSeleccionada, setReservaSeleccionada] = useState(null);
+
+    const actualizarReserva = (reservaActualizada) => {
+        setReservas(reservas.map((r) => r.codigo === reservaActualizada.codigo ? reservaActualizada : r));
+    };
+
+    const handleEstadoReserva = (reserva) => {
+        const nuevaReserva = { ...reserva, estado: reserva.estado === 'En espera' ? 'En hospedaje' : 'En espera' };
+        actualizarReserva(nuevaReserva);
+    };
+
+    const handleCancelarReserva = (reserva) => {
+        const reservaCancelada = { ...reserva, estado: 'Cancelada' };
+        actualizarReserva(reservaCancelada);
+        // Si quieres eliminarla de la lista después de cancelarla:
+        setReservas(reservas.filter((r) => r.codigo !== reserva.codigo));
+    };
 
     return {
         reservas,
         setReservas,
-        reservaSeleccionada,
-        setReservaSeleccionada,
-    }
+        handleEstadoReserva,
+        handleCancelarReserva,
+    };
 }
