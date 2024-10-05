@@ -12,7 +12,7 @@ export default function useReserva() {
     };
 
     const handleCancelarReserva = (reserva) => {
-        const reservaCancelada = { ...reserva, estado: 'Cancelada' };
+        const reservaCancelada = { ...reserva, estado: 'Cancelado' };
         actualizarReserva(reservaCancelada);
         // Si quieres eliminarla de la lista después de cancelarla:
         setReservas(reservas.filter((r) => r.codigo !== reserva.codigo));

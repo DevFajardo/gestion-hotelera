@@ -92,3 +92,8 @@ export async function peticionCreateOrUpdate(ruta, body) {
 export async function getEmpleados(setEmpleados) {
   setEmpleados(await peticionGet("http://localhost:3000/api/empleados"));
 }
+export async function getReservas(setReservas) {
+  setReservas(await peticionGet("http://localhost:3000/api/reservas"));
+}
+
+
