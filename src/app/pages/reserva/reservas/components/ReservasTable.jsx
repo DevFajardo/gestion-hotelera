@@ -9,7 +9,7 @@ const ReservasTable = () => {
 
   useEffect(() => {
     getReservas(setReservas);
-  }, []);
+  }, [setReservas]);
 
   return (
     <div className="container">
