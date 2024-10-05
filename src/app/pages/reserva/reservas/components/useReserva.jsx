@@ -1,27 +1,41 @@
-import { useState } from 'react';
+import { useState } from "react";
 export default function useReserva() {
-    const [reservas, setReservas] = useState([]);
+  const [reservas, setReservas] = useState([]);
 
-    const actualizarReserva = (reservaActualizada) => {
-        setReservas(reservas.map((r) => r.codigo === reservaActualizada.codigo ? reservaActualizada : r));
-    };
+  const actualizarReserva = (reservaActualizada) => {
+    setReservas(
+      reservas.map((r) =>
+        r.codigo === reservaActualizada.codigo ? reservaActualizada : r
+      )
+    );
+  };
 
-    const handleEstadoReserva = (reserva) => {
-        const nuevaReserva = { ...reserva, estado: reserva.estado === 'En espera' ? 'En hospedaje' : 'En espera' };
-        actualizarReserva(nuevaReserva);
+  const handleEstadoReserva = (reserva) => {
+    const nuevaReserva = {
+      ...reserva,
+      estado: reserva.estado === "En espera" ? "En hospedaje" : "En espera",
     };
+    actualizarReserva(nuevaReserva);
+  };
 
-    const handleCancelarReserva = (reserva) => {
-        const reservaCancelada = { ...reserva, estado: 'Cancelado' };
-        actualizarReserva(reservaCancelada);
-        // Si quieres eliminarla de la lista después de cancelarla:
-        setReservas(reservas.filter((r) => r.codigo !== reserva.codigo));
-    };
+  const handleCancelarReserva = (codigo, identificacion, pago, cancelado) => {
+    const element = document.getElementById(codigo);
+    const icon = document.getElementById(identificacion);
+    const check = document.getElementById(pago);
+    const canceladoInfo = document.getElementById(cancelado);
 
-    return {
-        reservas,
-        setReservas,
-        handleEstadoReserva,
-        handleCancelarReserva,
-    };
+    if (element.style.backgroundColor !== "grey") {
+      element.style.backgroundColor = "grey";
+      icon.className = "none";
+      check.style.display = "none";
+      canceladoInfo.style.display = "block";
+    }
+  };
+
+  return {
+    reservas,
+    setReservas,
+    handleEstadoReserva,
+    handleCancelarReserva,
+  };
 }

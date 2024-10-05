@@ -27,7 +27,7 @@ const ReservasTable = () => {
         </thead>
         <tbody>
           {reservas.map((reserva) => (
-            <tr key={reserva.codigo}>
+            <tr key={reserva.codigo} id={reserva.codigo}>
               <td>{reserva.codigo}</td>
               <td>{reserva.identificacion}</td>
               <td>{reserva.nombre}</td>
@@ -40,14 +40,30 @@ const ReservasTable = () => {
               <td>
                 <div className="icons-estado">
                   <input
+                    id={reserva.pago}
                     type="checkbox"
                     checked={reserva.estado === "En hospedaje"}
                     onChange={() => handleEstadoReserva(reserva)}
                   />
                   <div
+                    id={reserva.identificacion}
                     className="button-cancel"
-                    onClick={() => handleCancelarReserva(reserva)}
-                  ></div>
+                    onClick={() =>
+                      handleCancelarReserva(
+                        reserva.codigo,
+                        reserva.identificacion,
+                        reserva.pago,
+                        reserva.numero_habitacion
+                      )
+                    }
+                  >
+                    <h4
+                      id={reserva.numero_habitacion}
+                      className="canceladoInfo"
+                    >
+                      Cancelado
+                    </h4>
+                  </div>
                 </div>
               </td>
             </tr>
