@@ -53,16 +53,12 @@ select {
 button {
   padding: 10px;
   background-color: #0056b3;
-  width: 300px;
   color: white;
   border: none;
   border-radius: 10px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
 .formulacioMDP {
   display: flex;
   margin-left: 5px;
@@ -95,4 +91,8 @@ hr {
 .buttonCancelar {
   background-color: red;
   margin-bottom: 50px;
+  width: 300px;
+}
+.buttonConfirmar {
+  width: 300px;
 }
