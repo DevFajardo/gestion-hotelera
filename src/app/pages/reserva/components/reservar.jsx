@@ -1,4 +1,4 @@
-import style from "../styles/reservar.css";
+import "../styles/reserva.css";
 
 
 export default function reserva(){

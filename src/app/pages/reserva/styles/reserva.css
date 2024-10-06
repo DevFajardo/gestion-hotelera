@@ -29,6 +29,10 @@
     margin-left: 50px;
 }
 
+.formulacioMDP > div {
+    display: flex;
+}
+
 label {
     margin-bottom: 5px;
     font-size:medium;
@@ -47,6 +51,7 @@ input, select {
     border-radius: 25px;
     width: 200px;
     margin-left: 20px;
+    flex: 1;
 }
 .buttonContainer {
     text-align: center;
