@@ -17,7 +17,7 @@ export default function Navbar() {
           <p className={style.nombre}>{nombre}</p>
           <p className={style.Rol}>{rol}</p>
         </div>
-        <Menu/>
+        <Menu />
       </div>
     </div>
   );

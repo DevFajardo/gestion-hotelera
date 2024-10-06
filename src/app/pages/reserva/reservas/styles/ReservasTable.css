@@ -1,0 +1,142 @@
+/* Estilos generales */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* Estilos de la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #f9fbfd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e3e6e8;
+  color: #333;
+}
+
+th {
+  background-color: #3f88c5;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  height: 30px;
+}
+
+td:last-child {
+  width: 50px;
+  text-align: center;
+}
+
+.button-cancel {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("/icons/cancelarIcon.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.button-check {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("/icons/checkIcon.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.button-cancel input {
+  width: 24px;
+  height: 24px;
+}
+
+.button-cancel:hover {
+  width: 25px;
+  height: 25px;
+  background-image: url("/icons/cancelarIconHover.svg");
+  cursor: pointer;
+}
+.canceladoInfo{
+    display: none;
+    margin: 5px;
+    color: red;
+}
+
+td {
+  font-size: 14px;
+}
+
+tr:hover {
+  background-color: #e5f1fb;
+  cursor: pointer;
+}
+
+.icons-estado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos del botón */
+
+/* Media Queries para responsive design */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 20px;
+  }
+
+  th,
+  td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  table {
+    overflow-x: auto;
+  }
+
+  td:last-child {
+    width: 40px;
+  }
+
+  .button-cancel {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Para pantallas extra pequeñas */
+@media (max-width: 480px) {
+  th,
+  td {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  td:last-child {
+    width: 35px;
+  }
+
+  .button-cancel {
+    width: 18px;
+    height: 18px;
+  }
+}

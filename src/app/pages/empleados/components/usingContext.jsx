@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import { ContextEmpleadosProvider } from "./ContextEmpleados";
 import EmpleadosTable from "./EmpleadosTable";
-export default function EmpleadosMain({ Empleados }) {
-    return (
-        <ContextEmpleadosProvider>
-            <EmpleadosTable Empleados={Empleados}/>
-        </ContextEmpleadosProvider>
-    );
+export default function EmpleadosMain() {
+  return (
+    <ContextEmpleadosProvider>
+      <EmpleadosTable />
+    </ContextEmpleadosProvider>
+  );
 }

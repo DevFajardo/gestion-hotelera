@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import Modal from "react-modal";
 import '../styles/Modal.css';
+import { useRouter } from "next/navigation";
 // Para que el modal esté vinculado correctamente al root
 
 const HabitacionModal = ({ isOpen, onRequestClose, habitacion }) => {
+  const router = useRouter();
   useEffect(() => {
     Modal.setAppElement("#modal-root");
   }, []);
@@ -14,7 +16,7 @@ const HabitacionModal = ({ isOpen, onRequestClose, habitacion }) => {
 
   const handleAction = () => {
     if (habitacion.estado_disponibilidad.includes("disponible")) {
-      console.log("Reservar habitación");
+      router.push("/pages/reserva/reservar")
     } else {
       console.log("Gestionar habitación");
     }

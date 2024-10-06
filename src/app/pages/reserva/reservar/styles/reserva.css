@@ -1,0 +1,98 @@
+.divReserva {
+  display: flex;
+  gap: 20px;
+}
+
+.container {
+  margin: 50px 16%;
+  margin-right: 5px;
+  background-color: #ffffff;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  margin-bottom: 40px;
+  font-size: 10px;
+  text-align: start;
+  margin-left: 50px;
+}
+
+.formularioDP {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: medium;
+  margin-right: 20px;
+}
+.required {
+  color: #0056b3;
+  font-size: 1.2em;
+}
+
+input,
+select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  width: 200px;
+  margin-left: 20px;
+}
+.buttonContainer {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+button {
+  padding: 10px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.formulacioMDP {
+  display: flex;
+  margin-left: 5px;
+  margin-bottom: 100px;
+}
+.containerMDP {
+  margin: 50px 0;
+  padding: 20px;
+  background-color: #ffffff;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+.containerMDP input {
+  margin-right: 10px;
+  width: 30px;
+}
+h2 {
+  margin-top: 30px;
+  font-size: small;
+  margin-left: 10px;
+}
+hr {
+  margin-top: 30px;
+}
+.containerMDP button {
+  padding: 15px;
+  margin-top: 20px;
+}
+.buttonCancelar {
+  background-color: red;
+  margin-bottom: 50px;
+  width: 300px;
+}
+.buttonConfirmar {
+  width: 300px;
+}

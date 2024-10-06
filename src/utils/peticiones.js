@@ -38,3 +38,62 @@ export async function peticionGet(url) {
   const data = await peticion.json();
   return data;
 }
+
+export async function peticionDelete(url, body) {
+  try {
+    const peticion = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    const response = await peticion.json();
+    return response;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+export async function peticionCreateOrUpdate(ruta, body) {
+  console.log(body)
+  if (body.action == "Crear") {
+    try {
+      const peticion = await fetch(ruta, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      const response = await peticion.json();
+      return response;
+    } catch (error) {
+      throw new Error(error);
+    }
+  } else {
+    try {
+      const peticion = await fetch(ruta, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      console.log(body)
+      const response = await peticion.json();
+      return response;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+}
+
+export async function getEmpleados(setEmpleados) {
+  setEmpleados(await peticionGet("http://localhost:3000/api/empleados"));
+}
+export async function getReservas(setReservas) {
+  setReservas(await peticionGet("http://localhost:3000/api/reservas"));
+}
+
+

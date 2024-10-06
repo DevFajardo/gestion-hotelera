@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Filter } from "@/app/components/Cards/filter";
 import Card from "./card";
+import '../styles/Habitaciones.css'
 
   const Cards = ({habitaciones}) => {
     
@@ -37,9 +38,11 @@ import Card from "./card";
         general="ESTADOS"
       />
       </div>
+      <div className='grid-wrapper'>
       {filteredRooms.map((room) => (
         <Card key={room.id} habitacion={room} />
       ))}
+      </div>
     </>
   );
 };
