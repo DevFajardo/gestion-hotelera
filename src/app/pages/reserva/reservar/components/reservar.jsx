@@ -115,8 +115,8 @@ export default function reserva() {
             <h2>Pago:</h2>
             <h2>Cambio:</h2>
           </div>
-          <div className="buttonConfirmar">
-            <button>Confirmar</button>
+          <div>
+            <button className="buttonConfirmar">Confirmar</button>
           </div>
           <div>
             <button className="buttonCancelar">Cancelar</button>
