@@ -3,6 +3,12 @@ import Modal from "react-modal";
 import "../styles/ModalEmpleado.css";
 
 const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
+  const rolMap = {
+    "administrador": "1",
+    "recepcionista": "4",
+    "limpieza" : "3",
+    "cocinero" : "2",
+  }
   // Estado para manejar el nuevo empleado
   const [nuevoEmpleado, setNuevoEmpleado] = useState({
     nombre: "",
@@ -28,7 +34,7 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
     if (isOpen) {
       if (empleado) {
         // Carga los datos del empleado en el estado solo si el modal está abierto y hay un empleado seleccionado
-        setNuevoEmpleado(empleado);
+        setNuevoEmpleado({...empleado, rol: rolMap[empleado.rol]});
       } else {
         // Reinicia el estado para añadir un nuevo empleado
         setNuevoEmpleado({
@@ -119,7 +125,7 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
           />
         </div>
         <div className="input-container">
-          <div className="input-container">
+          {/*<div className="input-container">
             <label htmlFor="rol">Rol de usuario</label>
             <input
               className="inputs"
@@ -130,8 +136,9 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
               onChange={handleChange}
               required
             />
-          </div>
-          {/* <select
+          </div>*/}
+          <label htmlFor="rol">Rol de usuario</label>
+          <select
                         id="rol"
                         name="rol"
                         value={nuevoEmpleado.rol}
@@ -139,11 +146,11 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
                         required
                     >
                         <option value="">Selecciona un rol</option>
-                        <option value="administrador">Administrador</option>
-                        <option value="recepcionista">Recepcionista</option>
-                        <option value="limpieza">Limpieza</option>
-                        <option value="cocinero">Cocinero</option>
-                    </select> */}
+                        <option value="1">Administrador</option>
+                        <option value="4">Recepcionista</option>
+                        <option value="3">Limpieza</option>
+                        <option value="2">Cocinero</option>
+            </select>
         </div>
         <div className="input-container">
           <label htmlFor="direccion">Dirección</label>
@@ -154,7 +161,6 @@ const EmpleadoModal = ({ isOpen, setIsOpen, onAgregarEmpleado, empleado }) => {
             name="direccion"
             value={nuevoEmpleado.direccion}
             onChange={handleChange}
-            required
           />
         </div>
         <div className="input-container">
